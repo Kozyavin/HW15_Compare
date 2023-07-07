@@ -31,7 +31,8 @@ public class AviaSoulsTest {
             4500,
             12,
             17);
-@Test                             ///Тест метода compareTo
+
+    @Test                             ///Тест метода compareTo
     public void TicketTestCompareTo() {
 
         ticket.compareTo(ticket);
@@ -40,8 +41,9 @@ public class AviaSoulsTest {
         int expected = -1;
         int actual = ticket.compareTo(ticket2);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test                             ///Тест метода compareTo
     public void TicketTestCompareTo2() {
 
@@ -51,8 +53,9 @@ public class AviaSoulsTest {
         int expected = 1;
         int actual = ticket2.compareTo(ticket);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test                             ///Тест метода compareTo
     public void TicketTestCompareTo3() {
 
@@ -62,9 +65,11 @@ public class AviaSoulsTest {
         int expected = -1;
         int actual = ticket.compareTo(ticket3);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
-    @Test                            //////////////////Тест метода search c добавлением сортировки по цене////////////////
+
+    @Test
+    //////////////////Тест метода search c добавлением сортировки по цене////////////////
     public void TicketTestsSearch() {
         AviaSouls aviaSouls = new AviaSouls();
         aviaSouls.add(ticket); //price 3000  "Москва","Брянск"
@@ -76,11 +81,12 @@ public class AviaSoulsTest {
         //Т.к. сортируемые билеты отсортированы по Откуда/куда,
         // то после Arrays.sort(result) следующий параметр для сортировки будет - цена по возрастанию
 
-        Ticket[] expected = {ticket4,ticket,ticket3,ticket5,ticket2};
-        Ticket[] actual = aviaSouls.search("Москва","Брянск");
+        Ticket[] expected = {ticket4, ticket, ticket3, ticket5, ticket2};
+        Ticket[] actual = aviaSouls.search("Москва", "Брянск");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test                            //////////////////Тест метода compare////////////////
     public void TicketTestsComparator() {
         TicketTimeComparator timeComparator = new TicketTimeComparator();
@@ -93,9 +99,9 @@ public class AviaSoulsTest {
 
 
         int expected = -1;
-        int actual = timeComparator.compare(ticket,ticket4);
+        int actual = timeComparator.compare(ticket, ticket4);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test                            //////////////////Тест метода searchAndSortBy////////////////
@@ -108,9 +114,9 @@ public class AviaSoulsTest {
         aviaSouls.add(ticket4);//time4 = 3
         aviaSouls.add(ticket5);//time5 = 5
 
-        Ticket[] expected = {ticket,ticket4,ticket3,ticket5,ticket2};
-        Ticket[] actual = aviaSouls.searchAndSortBy("Москва","Брянск",timeComparator);
+        Ticket[] expected = {ticket, ticket4, ticket3, ticket5, ticket2};
+        Ticket[] actual = aviaSouls.searchAndSortBy("Москва", "Брянск", timeComparator);
 
-        Assertions.assertArrayEquals(expected,actual);
-}
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

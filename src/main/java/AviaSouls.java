@@ -55,6 +55,7 @@ public class AviaSouls {
         return result;
 
     }
+
     public Ticket[] searchAndSortBy(String from, String to, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0]; // массив для ответа
         for (Ticket ticket : tickets) { // перебираем все билеты
@@ -64,11 +65,11 @@ public class AviaSouls {
                 }
             }
         }
-        Arrays.sort(result,comparator);
+        Arrays.sort(result, comparator);
         return result;
     }
 
-    }
+}
 
 
 
